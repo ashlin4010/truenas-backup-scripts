@@ -15,3 +15,10 @@ This script does a simple check to ensure that the backup tar is and contains th
 
 ### Recommended Installation ###
 Create a new dataset named `Backup`, place this file at the root of the path. Add a new cron job to run this file once a week. If you want more frequent you should consider increasing the number of backups to retain.
+
+
+
+## backup-vms.sh ##
+This script will automatically shutdown VMs, take a snapshot, backup it up and restart the VM.
+
+Backups are saved to the specified path. Backups and snapshots will automatically be removed after n copies exist.
