@@ -3,6 +3,9 @@
 This repository contains a two scripts to backup VMs and the system config on TrueNAS Scale.
 These scrips depend on the [TrueNAS cli](https://github.com/truenas/midcli) tool.
 
+### Important ###
+`backup-vms.sh` will set your system `zfs_arc_max` to 8GiB. This is because turning VMs on and off causes TrueNas to re-evaluate the `zfs_arc_max` default value and it does so incorrectly. This will cause the system to over allocate memory to the ZFS ARC, this will prevent the system from allowing the VM to restart. The solution is to force `zfs_arc_max` to a lower value. You may wish to adjust this value appropriate to your system and needs.
+
 ## backup-system-config.sh (Exports system Config) ##
 This script will export the system config including the system Password Secret Seed to the specified path. It will retain the last 5 configurations.
 

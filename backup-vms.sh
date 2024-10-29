@@ -3,9 +3,7 @@
 # Note:
 # Set the systems max ARC size otherwise the system might dynamically
 # reallocated memory when the VM turns off.
-
-# There is a buy where max arc keeps being updated by the system and you can run out of ram
-MAX_ARC="8589934592"
+MAX_ARC="8589934592" # bytes
 
 # Change as needed, note that BACKUP_DIR will be made if missing but DATASET_PATH will not
 BACKUP_DIR="virtual-machines"
